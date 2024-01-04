@@ -3,8 +3,10 @@
 
 ### placeholder name
 
-Group Members Here
+Group Members
+
 Z Cater
+
 Raymond Zhang
 
 ### Project Description:
