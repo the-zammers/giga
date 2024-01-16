@@ -11,7 +11,7 @@ To compile:
 1. Run `make compile` while in the same directory as giga and ensure there are no errors. If there are errors, cry and do not continue.
 
 To run:
-0. While in the same directory as giga, run `./giga` to open giga with an empty buffer, or `./giga data/beemovie.txt`, for example, to open giga with a file already opened.
+0. While in the same directory as giga, run `./giga` or `make run` to open giga with an empty buffer, or `./giga data/beemovie.txt`, for example, to open giga with a file already opened.
 1. Press ^Q at any time (except during an input prompt) to quit.
 
 
@@ -33,7 +33,7 @@ To run:
 - ^G: get help (switch to help tab)
 
 - ^Z: begin selection (mark)
-- ^C: copy from mark
+- ^C: single-line copy from mark
 - ^V: paste copy buffer
 - ^N: paste copy buffer (for systems overriding ^V)
 

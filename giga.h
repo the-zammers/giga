@@ -28,6 +28,7 @@ struct tab_status{
   struct line *curr_line;
   struct line *first_line;
   int isMarked; //0 unmarked, 1 marked
+  int marked[2];
 };
 
 struct line{

@@ -24,7 +24,6 @@ int main(int argc, char *argv[]){
   setup(argc>1 ? argv[1] : "");
 
   int ch;
-  int * marked = malloc(sizeof(int) * 2);
   char buffer[LINE_SIZE];
   while(1){
     ch = getch();
@@ -32,7 +31,6 @@ int main(int argc, char *argv[]){
     helpbar_default();
 
     if(ch==KEY_CTRL('q')){
-      free(marked);
       break;
     }
     else if(ch==KEY_RESIZE){
@@ -49,14 +47,18 @@ int main(int argc, char *argv[]){
     cursor_keyhandler(ch);
     modify_keyhandler(ch);
 
+    if(T.isMarked && T.line_goal!=T.marked[1]){
+      T.isMarked = 0;
+      helpbar_alert("Mark removed!");
+    }
 
     if(ch==KEY_CTRL('z')){
-      marked = marking(T.cx_real, T.cy);
+      marking(T.cx_real, T.line_goal);
       T.isMarked = 1;
       helpbar_alert("Mark placed!");
     }
     else if(ch==KEY_CTRL('c') && T.isMarked){
-      copy_text(marked, T.cx_real, T.cy, buffer);
+      copy_text(T.marked, T.cx_real, T.line_goal, buffer);
       T.isMarked = 0;
       helpbar_alert("Copied!");
     }

@@ -2,10 +2,10 @@
 
 run: giga
 	./giga
-	@[ -f ./data/output.txt ] && cat ./data/output.txt || true
 
 compile giga: giga.o cursor.o setup.o config.o util.o read.o modify.o helpbar.o visual.o tabs.o copypaste.o
 	gcc -Wall -Werror -o giga giga.o cursor.o setup.o config.o util.o read.o modify.o helpbar.o visual.o tabs.o copypaste.o -lncursesw
+	cp README.md help.txt
 
 giga.o: giga.c giga.h cursor.c cursor.h setup.c setup.h util.c util.h read.c read.h modify.c modify.h helpbar.c helpbar.h visual.c visual.h tabs.c tabs.h copypaste.c copypaste.h
 	gcc -c giga.c

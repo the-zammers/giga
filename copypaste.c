@@ -18,11 +18,10 @@ char* substr(int startx, int endx, char * str, char * buffer){
 int * marking(int x, int y){
 	int markx = x;
 	int marky = y;
-	int* coords = malloc(sizeof(int) * 2);
-	coords[0] = markx;
-	coords[1] = marky;
+	T.marked[0] = markx;
+	T.marked[1] = marky;
 	// printf("%d , %d", coords[0], coords[1]);
-	return coords;
+	return T.marked;
 }
 
 //only works for same line (limitation- can only have a length of LINE_SIZE at a time)
