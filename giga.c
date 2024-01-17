@@ -52,10 +52,14 @@ int main(int argc, char *argv[]){
       helpbar_alert("Mark removed!");
     }
 
-    if(ch==KEY_CTRL('z')){
+    if(ch==KEY_CTRL('z') && !T.isMarked){
       marking(T.cx_real, T.line_goal);
       T.isMarked = 1;
       helpbar_alert("Mark placed!");
+    }
+    else if(ch==KEY_CTRL('z') && T.isMarked){
+      T.isMarked = 0;
+      helpbar_alert("Mark removed!");
     }
     else if(ch==KEY_CTRL('c') && T.isMarked){
       copy_text(T.marked, T.cx_real, T.line_goal, buffer);

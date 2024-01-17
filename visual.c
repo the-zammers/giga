@@ -48,8 +48,8 @@ void refresh_all(){
   }
 
   if(T.isMarked){
-    if(T.cx_real<T.marked[0]) mvwchgat(EDIT_WINDOW, T.cy, T.cx_real, T.marked[0]-T.cx_real, A_STANDOUT, 0, NULL);
-    if(T.cx_real>T.marked[0]) mvwchgat(EDIT_WINDOW, T.cy, T.marked[0], T.cx_real-T.marked[0], A_STANDOUT, 0, NULL);
+    if(T.cx_real<T.marked[0]) mvwchgat(EDIT_WINDOW, T.cy-T.miny, T.cx_real, T.marked[0]-T.cx_real, A_STANDOUT, 0, NULL);
+    if(T.cx_real>T.marked[0]) mvwchgat(EDIT_WINDOW, T.cy-T.miny, T.marked[0], T.cx_real-T.marked[0], A_STANDOUT, 0, NULL);
   }
 
   updateCursor();
