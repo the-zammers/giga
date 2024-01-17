@@ -1,6 +1,7 @@
 #include <ncurses.h>
 #include "giga.h"
-#include <stdlib.h> // atexit
+#include <stdlib.h> // malloc, free, atexit
+#include <string.h> // strcpy
 #include "config.h"
 #include "read.h" // free_doc
 #include "visual.h" // init_colors, redraw
@@ -41,6 +42,8 @@ void setup(char *path){
   E.curr_tab = 1;
   E.last_tab = 0;
   E.tabcount = 0;
+  E.help_path = malloc(LINE_SIZE);
+  strcpy(E.help_path, "help.txt");
 
   // use config file to modify color pairs
   readConfig(E.config_path);
@@ -64,6 +67,7 @@ void reset(){
   delwin(NUMS_WINDOW);
   endwin();
   for(int i=0; i<E.tabcount; i++) delete_tab(i);
+  free(E.help_path);
 }
 
 void resize(){

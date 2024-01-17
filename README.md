@@ -23,7 +23,6 @@ To run:
 - ???: insert line above, below
 - center screen on cursor
 tab completion
-- specify config and help
 - no more errors
 - open immutable tabs better
 - work in other directories
@@ -79,6 +78,7 @@ Each line starts with "set" followed by an attribute.
 - bold, underline, dim, highlight: take a window name
 - tabsize: takes an integer (default: 4)
 - maxlength: takes an integer (default: 256)
+- helpfile: takes a path to the file to be shown as the helpfile
 Comments with begin with #
 
 ---

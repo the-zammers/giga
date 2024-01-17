@@ -20,7 +20,6 @@ struct tab_status T;
 int main(int argc, char *argv[]){
 
   E.config_path = "giga.conf";
-  E.help_path = "help.txt";
   
   setup(argc>1 ? argv[1] : "");
 
@@ -46,6 +45,7 @@ int main(int argc, char *argv[]){
       readConfig(E.config_path);
       struct tab_status *tab = E.tabs[0];
       free_doc(tab->data);
+      strncpy(tab->path, E.help_path, LINE_SIZE);
       tab->data=readFile(tab->path, NULL);
       tab->curr_line = tab->data;
       tab->first_line = tab->curr_line;

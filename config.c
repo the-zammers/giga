@@ -1,7 +1,7 @@
 #include <ncurses.h>
 #include "giga.h"
 #include <stdio.h> // fopen, fgets
-#include <string.h> // strcmp, strsep
+#include <string.h> // strcmp, strsep, strncpy
 #include <ctype.h> // isdigit
 #include "util.h" // split, remove_crlf
 #include "config.h"
@@ -69,6 +69,9 @@ void readConfig(char* path){
         if(tonum(args[2]) != -1){
           E.maxlength = tonum(args[2]);
         }
+      }
+      else if(!strcmp(args[1], "helpfile")){
+        strncpy(E.help_path, args[2], LINE_SIZE);
       }
       else if(attrname(args[1]) != -1){
         if(winptr(args[2])){

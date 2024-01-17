@@ -41,7 +41,6 @@ struct line{
 
 extern struct editor_status E;
 extern struct tab_status T;
-//extern struct tab_status H;
 #define LINE_SIZE E.maxlength
 #define INFO_WINDOW E.windows[0]
 #define HELP_WINDOW E.windows[1]
