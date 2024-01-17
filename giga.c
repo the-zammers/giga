@@ -53,11 +53,24 @@ int main(int argc, char *argv[]){
       helpbar_alert("giga reloaded!");
     }
 
-    
     readwrite_keyhandler(ch);
     tab_keyhandler(ch);
     cursor_keyhandler(ch);
     modify_keyhandler(ch);
+
+    if(ch==KEY_CTRL('f')){
+      char *match;
+      char needle[LINE_SIZE];
+      helpbar_input("String to search for: ", needle, "");
+      for(struct line *node = T.first_line; node; node = node->next){
+        match = strstr(node->str, needle); // case sensitive
+        if(match){
+          T.line_goal = node->line_num;
+          T.cx = match - (node->str);
+          break;
+        }
+      }
+    }
 
     if(T.isMarked && T.line_goal!=T.marked[1]){
       T.isMarked = 0;

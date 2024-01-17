@@ -22,13 +22,14 @@ To run:
 - Shift-Right: delete from cursor to end of line
 - ???: insert line above, below
 - center screen on cursor
-tab completion
+- tab completion
 - no more errors
 - open immutable tabs better
 - work in other directories
 - 256 colors?
 - autoindent
-- syntax highlighting
+- process line as an array of words
+  - syntax highlighting
 - delete tabs
 - better line numbers
 

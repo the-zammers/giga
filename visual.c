@@ -40,7 +40,7 @@ void refresh_all(){
     wmove(EDIT_WINDOW, i, 0);
     print(node->str);
     i += node->line_len / E.width + 1;
-    T.lastlinenum = node->line_num;
+    T.bottomlinenum = node->line_num;
   }
   while(i<E.height){
     mvwprintw(NUMS_WINDOW, i, 0, "~");

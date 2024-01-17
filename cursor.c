@@ -34,8 +34,7 @@ void cursor_keyhandler(int ch){
       T.line_goal = T.first_line->line_num;
       break;
     case KEY_NPAGE: // page down
-      //T.cy = T.miny + E.height - 1;
-      T.line_goal = T.lastlinenum;
+      T.line_goal = T.bottomlinenum;
       break;
     case KEY_CTRL('m'): // enter
       T.line_goal++;
