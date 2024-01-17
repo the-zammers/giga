@@ -23,7 +23,6 @@ To run:
 - ???: insert line above, below
 - center screen on cursor
 tab completion
-- reload config and help
 - specify config and help
 - no more errors
 - open immutable tabs better
@@ -31,6 +30,8 @@ tab completion
 - 256 colors?
 - autoindent
 - syntax highlighting
+- delete tabs
+- better line numbers
 
 ---
 
@@ -40,8 +41,8 @@ tab completion
 
 - ^Q: quit
 - ^W: write to file
-- ^E: toggle edit mode between insert and replace
-- ^R: revert buffer to match original file, wipe changes
+- ^E: eject changes (wipe changes and revert buffer)
+- ^R: reload config file and help file
 - ^T: create new tab
 
 - ^A: ascend n rows

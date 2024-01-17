@@ -8,6 +8,7 @@
 #include "helpbar.h" // helpbar_alert
 #include "visual.h" // refresh_all
 #include "tabs.h" // tab_keyhandler
+#include "config.h" // readConfig
 #include "copypaste.h"
 #include <stdlib.h>
 #include <string.h>
@@ -36,11 +37,22 @@ int main(int argc, char *argv[]){
     else if(ch==KEY_RESIZE){
       resize();
     }
-    else if(ch==KEY_IC || ch==KEY_CTRL('e')){
+    else if(ch==KEY_IC){
       E.mode = !E.mode;
       if(!E.mode) helpbar_alert("editor mode set to INSERT");
       else helpbar_alert("editor mode set to REPLACE");
     }
+    else if(ch==KEY_CTRL('r')){
+      readConfig(E.config_path);
+      struct tab_status *tab = E.tabs[0];
+      free_doc(tab->data);
+      tab->data=readFile(tab->path, NULL);
+      tab->curr_line = tab->data;
+      tab->first_line = tab->curr_line;
+      init_cursor(tab);
+      helpbar_alert("giga reloaded!");
+    }
+
     
     readwrite_keyhandler(ch);
     tab_keyhandler(ch);

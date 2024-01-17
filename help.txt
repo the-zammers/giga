@@ -14,6 +14,24 @@ To run:
 0. While in the same directory as giga, run `./giga` or `make run` to open giga with an empty buffer, or `./giga data/beemovie.txt`, for example, to open giga with a file already opened.
 1. Press ^Q at any time (except during an input prompt) to quit.
 
+---
+
+## TODO
+
+- Shift-Left: delete line
+- Shift-Right: delete from cursor to end of line
+- ???: insert line above, below
+- center screen on cursor
+tab completion
+- specify config and help
+- no more errors
+- open immutable tabs better
+- work in other directories
+- 256 colors?
+- autoindent
+- syntax highlighting
+- delete tabs
+- better line numbers
 
 ---
 
@@ -23,17 +41,19 @@ To run:
 
 - ^Q: quit
 - ^W: write to file
-- ^E: toggle edit mode between insert and replace
-- ^R: revert buffer to match original file, wipe changes
+- ^E: eject changes (wipe changes and revert buffer)
+- ^R: reload config file and help file
 - ^T: create new tab
 
 - ^A: ascend n rows
 - ^S: skip to row n
 - ^D: descend n rows
+- ^F: find TO BE IMPLEMENTED
 - ^G: get help (switch to help tab)
 
-- ^Z: begin selection (mark)
-- ^C: single-line copy from mark
+- ^Z: place or remove mark (begin selection) ALLOW DELETING
+- ^C: single-line copy from mark MAKE IT MULTI LINE
+- ^X: cut from mark TO BE IMPLEMENTED
 - ^V: paste copy buffer
 - ^N: paste copy buffer (for systems overriding ^V)
 
@@ -47,8 +67,8 @@ To run:
 - Insert:    toggle edit mode between insert and replace
 - Home:      jump to start of line
 - End:       jump to end of line
-- Page Up:   jump to top of screen
-- Page Down: jump to bottom of screen
+- Page Up:   jump to top of screen TODO: IMPROVE
+- Page Down: jump to bottom of screen TODO: IMPROVE
 
 ---
 

@@ -18,13 +18,13 @@ int readwrite_keyhandler(int ch){
         if(!strlen(T.path)) strncpy(T.path, to, LINE_SIZE+1);
         infobar_default();
         break;
-      case KEY_CTRL('r'):
+      case KEY_CTRL('e'):
         free_doc(T.data);
         T.data=readFile(T.path, NULL);
         T.curr_line = T.data;
         T.first_line = T.curr_line;
         init_cursor(&T);
-        helpbar_alert("reverted!");
+        helpbar_alert("changes ejected!");
         break;
       default:
         return 0;
